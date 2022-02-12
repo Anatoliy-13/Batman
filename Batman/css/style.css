@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*::focus:not(:focus-visible) {
+  outline: none;
+}
+html,
+body {
+  font-size: 62.5%; // сбрасываем стандартный размер шрифта браузера на 10px
+}
+.container {
+  width: 113.5rem; /*rem, 16px размер шрифта стандартный установленный на всех браузерах. 1rem=10px - сделали после наших манипуляций*/
+  margin: 0 auto; /* задали отступ всему контейнеру, расположив его по центру*/
+}
+.header {
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+.header__logo {
+  width: 7.9rem;
+  height: 2.8rem;
+  margin-right: 3.9rem;
+}
+.header__nav a:not(:last-child) {
+  /* задаем всем элементам кроме последнего определенные параметры, в данном случае отступ справа*/
+  margin-right: 2.4rem;
+}
+.header__nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.header__social__icon {
+  width: 1.7rem;
+  height: 1.6rem;
+}
+.header__social__icon:not(:only-child) {
+  margin-right: 2rem;
+}
+body {
+  background: url("../img/background.jpg");
+}
+.footer {
+  background: #030102;
+  color: #FFFFFF;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__menu {
+  display: flex;
+  padding-left: 0;
+  color: #FFFFFF;
+}
+.footer__menu li {
+  list-style: none; 
+}
+.footer__menu li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.footer__menu li:not(:last-child) {
+  margin-right: 2.5rem;
+}
