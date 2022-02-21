@@ -34,16 +34,112 @@ h6 {
   margin: 0;
   padding: 0;
 }
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
 .container {
   width: 113.5rem; /*rem, 16px размер шрифта стандартный установленный на всех браузерах. 1rem=10px - сделали после наших манипуляций*/
   margin: 0 auto; /* задали отступ всему контейнеру, расположив его по центру*/
+}
+@media (max-width: 108em) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 105em) {
+  html {
+    font-size: 8.75px;
+  }
+}
+
+@media (max-width: 91.5em) {
+  html {
+    font-size: 7.9px;
+  }
+}
+
+@media (max-width: 91em) {
+  html {
+    font-size: 8.4px;
+  }
+}
+
+@media (max-width: 90em) {
+  html {
+    font-size: 7.9px;
+  }
+}
+
+@media (max-width: 80em) {
+  html {
+    font-size: 7.2px
+  }
+}
+
+@media (max-width: 72em) {
+  html {
+    font-size: 6.5px;
+  }
+}
+
+@media (max-width: 64em) {
+  html {
+    font-size: 5.5px;
+  }
+}
+/* 
+@media (max-width: 48em) {
+  html {
+    font-size: 10px;
+  }
+
+} */
+
+@media (max-width: 44em) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 38em) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 34em) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 30em) {
+  html {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 26em) {
+  html {
+    font-size: 4.5px;
+  }
+}
+
+@media (max-width: 21em) {
+  html {
+    font-size: 4.4px;
+  }
 }
 .header {
   position: absolute;
   padding-bottom: 6.4rem;
   left: 50%; /*что бы спозиционировать шапку сайта при absolute нужны эти все действия, помеченные описанием*/
-  top: 6.4rem;/**/
-  transform: translate(-50%, 0);/**/
+  top: 6.4rem; /**/
+  transform: translate(-50%, 0); /**/
 }
 .header .container {
   display: flex;
@@ -63,6 +159,13 @@ h6 {
   /* задаем всем элементам кроме последнего определенные параметры, в данном случае отступ справа*/
   margin-right: 2.4rem;
 }
+
+.header__nav-mobile,
+.menu-burger,
+.header__menu-close {
+  display: none;
+} 
+
 .header__nav a {
   color: #ffffff;
   text-decoration: none;
@@ -70,6 +173,10 @@ h6 {
   font-size: 1.4rem;
   line-height: 114%; /*1.4rem получен делением 16 на 14*/
 }
+.header__social {
+  display: flex;
+}
+
 .header__social__icon {
   width: 1.7rem;
   height: 1.6rem;
@@ -78,8 +185,10 @@ h6 {
   margin-right: 2rem;
 }
 
-.main {                /**/
+.main {
+  /**/
   padding-top: 18.7rem;
+  padding-bottom: 10.4rem;
   background: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -124,13 +233,44 @@ h6 {
 .main__rating-wrap {
   margin-bottom: 1rem;
 }
+.main__description-wrap {
+display: flex;
+align-items: center;
+}
+
 .main__description {
   max-width: 52.8rem;
   height: 10rem;
   font-size: 1.4rem;
   line-height: 150%;
-  margin-bottom: 4.1rem;
+  margin-bottom: 10.1rem; /**/
 }
+
+.main__button-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13.2rem;
+  height: 13.2rem;
+  margin-left: 33.1rem;
+  border-radius: 50%;
+  background-color:#391917;
+  cursor: pointer;
+}
+.main__button-dark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  border-radius:50%;
+  background-color:#151515;
+}
+.main__button-dark img {
+  width: 3.5rem;
+  height: 4rem;
+}
+
 .main__button {
   display: flex;
   align-items: center;
@@ -144,6 +284,43 @@ h6 {
   text-decoration: none;
   background-color: #151515;
   border-radius: 0.8rem;
+}
+.main-slider_wrap {
+  max-width: 41.5rem;
+  /* margin-bottom: 10.4rem; */
+  display: flex;
+  align-items: center;
+}
+
+.main-slider_slide {
+  position: relative;
+  width: 16rem;
+  height: 10.5rem;
+  border-radius: 0.8rem;
+  overflow: hidden; /*помогает обрезать все лишнее, что не определено нашим блоком*/
+
+}
+.main-slider_slide span {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 0.6rem;
+  transform: translate(0, 0);
+  font-size: 1rem;
+  font-weight: 120%;
+}
+.main-slider_slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.main-slider__arrow{
+  width: 3.2rem;
+  height: 2.2rem;
+  flex-shrink: 0; /*тогда изображение не сузится и не исказится по пропорциям*/
+  margin-left: 2.8rem;
+  cursor: pointer;
 }
 
 .footer {
@@ -178,4 +355,121 @@ h6 {
   line-height: 143%;
   /* identical to box height, or 143% */
   color: #686767;
+}
+
+.header__nav-mobile {
+  display: none;
+}
+
+@media (max-width: 48em){
+  html {
+    font-size: 10px;
+  }
+.container {
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+  .header {
+    width: 69.4%;
+    background-color:#151515;
+    top: 0;
+    transform: translate(-28%, 0);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    z-index: 10;
+    display: none;
+  }
+
+  .header__logo {
+    margin-right: 0;
+    margin-bottom: 3.5rem;
+  }
+
+  .header__social {
+    margin-bottom: 2.2rem;
+  }
+
+  .header .container,
+  .header__nav,
+  .header__menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .header__nav {
+    display: none;
+  }
+
+  .header__nav-mobile {
+    display: flex;
+    flex-direction: column;
+   
+  }
+
+  .header__nav-mobile a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 114%;
+  }
+
+  .header__nav-mobile a {
+    display: inline-block;
+  }
+
+  .header__nav-mobile a:not(:last-child){
+    margin-bottom: 1.7rem;
+  }
+
+  .header__menu-close {
+    display: block;
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .menu-burger {
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .main {
+    background-position-x: 66%;
+  }
+
+  .main__description-wrap {
+    flex-direction: column;
+    margin-bottom: 5rem;
+
+  }
+
+  .main__button-play {
+    margin-left: 0;
+  }
+
+  .main__button {
+    margin-bottom: 4.4rem;
+    max-width: 68%;
+  }
+
+  .main-slider__arrow {
+    display: none;
+  }
+
+  .main-slider_wrap {
+    max-width: 53.5%;
+  }
+  
+  .footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
