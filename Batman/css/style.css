@@ -361,6 +361,32 @@ align-items: center;
   display: none;
 }
 
+.modal { /*ДОБАВЛЯЕМ ВИДЕО НА ВЕСЬ ЭКРАН*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /*появляется скрол*/
+  overflow-x: hidden; /* скрываем по оси Х скрол*/
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3rem 0;
+  z-index: 100; /*появится изображение на весь экран*/
+  display: none;
+}
+
+.modal__inner {
+  width: 100rem;
+  height: 60rem;
+}
+
+.active {
+  display: flex;
+}
+
 @media (max-width: 48em){
   html {
     font-size: 10px;
@@ -471,5 +497,15 @@ align-items: center;
   .footer .container {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .modal {
+    padding: 3rem;
+    
+  }
+
+  .modal__inner {
+    width: 100%;
+    height: 40rem;
   }
 }

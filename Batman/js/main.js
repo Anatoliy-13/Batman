@@ -26,3 +26,21 @@ burger.addEventListener("click", () => {
 closeMenu.addEventListener("click", () => {
   menuMobile.style.display = "none";
 });
+
+const modalWindow =
+  document.querySelector(
+    ".modal"
+  ); /*создаем действие - при нажатии на кнопку плей, выскакивает видео трейлер Батман 2022 */
+const buttonModal = document.querySelector(".main__button-play");
+
+buttonModal.addEventListener("click", (e) => {
+  modalWindow.classList.add("active");
+});
+
+modalWindow.addEventListener("click", (e) => {
+  const isModal = e.target.closest(".modal__inner");
+
+  if (!isModal) {
+    modalWindow.classList.remove("active");
+  }
+});
